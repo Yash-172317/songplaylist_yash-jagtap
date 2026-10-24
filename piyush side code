@@ -1,0 +1,53 @@
+  switch(choice)
+        {
+            case 1:
+                cout << "Enter song title: ";cin>>title;             //add song
+                cout << "Enter artist name: ";cin>>artist;
+                p.insert(title,artist);break;
+                
+            case 2:
+                cout << "Enter song title to delete: ";             //delete song
+                cin >> title;
+                p.remove(title);break;
+                
+            case 3:
+                p.displayforward();break; cout<<endl;            //display forward
+                
+            case 4:
+                p.displaybackward();break;                      //display backward
+                
+            case 5:
+                p.play("current");break;                         // Play current song
+                
+            case 6:
+                p.play("next");break;                           // Play next song
+                
+            case 7:
+                p.play("previous");break;                       // Play previous song
+
+            case 8:
+                p.playCompletePlaylist();break;                 // Play complete playlist
+
+            case 9:                                             // Repeat all
+                {
+                    int repetitions;
+                    cout<<"Enter number of repetitions: ";
+                    cin>>repetitions;
+                    p.repeatAll(repetitions);
+                }
+                break;
+
+            case 10:
+                p.play("current");break;                         // Show current song
+            
+            case 11:
+                cout<<"Exiting..." <<endl;break;             //exiting from menu
+                
+            default:
+                cout<<"Invalid choice!"<<endl;
+        }
+        cout<<endl;
+    } while(choice != 11);cout<<endl;
+    return 0;
+}
+
